@@ -22,7 +22,7 @@ export default function MainHeader() {
               <NavLink href="/meals">Browse Meals</NavLink>
             </li>
             <li>
-              <NavLink href="/community">Browse Meals</NavLink>
+              <NavLink href="/community">Community</NavLink>
             </li>
           </ul>
         </nav>
