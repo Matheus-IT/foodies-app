@@ -2,8 +2,6 @@ import Image from "next/image";
 import cls from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
-import Skeleton from "react-loading-skeleton";
-import { Suspense } from "react";
 
 export default async function MealDetailsPage({ params }) {
   const meal = await getMeal(params.slug);
@@ -18,9 +16,7 @@ export default async function MealDetailsPage({ params }) {
           <Image src={meal.image} alt={meal.title} fill />
         </div>
         <div className={cls.headerText}>
-          <Suspense fallback={<Skeleton width={200} height={40} />}>
-            <h1>{meal.title}</h1>
-          </Suspense>
+          <h1>{meal.title}</h1>
           <p className={cls.creator}>
             by <a href={`mailto:${meal.creator_email}`}>{meal.creator}</a>
           </p>
